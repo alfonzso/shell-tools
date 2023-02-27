@@ -1,3 +1,3 @@
-function wellcome(){
+function wellcome() {
   echo ".... Shell-Tools ...."
 }
