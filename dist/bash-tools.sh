@@ -1,5 +1,5 @@
 #! /bin/bash
-# version: 3e3e883
+# version: eae7fcb
 
 function b64_toggle() {
   input_str=$1
@@ -19,24 +19,22 @@ function list_remoteless_local_branches() {
 }
 
 function wellcome() {
-  echo " .... Shell-Tools .... vers: 3e3e883 "
+  echo " .... Shell-Tools .... vers: eae7fcb "
 }
-DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null && pwd)"
-ROOT=$DIR/..
 
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-sh_func=($(grep func -R $ROOT/lib | cut -d" " -f2 | sed 's|()||g' | xargs))
+sh_func="list_remoteless_local_branches wellcome b64_toggle"
 
 sh_functions() {
   echo "Available functions: "
-  for i in "${sh_func[@]}"; do
+  for i in $sh_func; do
     echo "  sh_$i"
   done
 }
 
-for i in "${sh_func[@]}"; do
+for i in $sh_func; do
   alias sh_$i="$i"
 done
