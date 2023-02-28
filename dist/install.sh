@@ -1,4 +1,5 @@
 #! /bin/bash
+set -e
 
 bash_tool="bash-tools.sh"
 install_dir="$HOME/.local/bin"
