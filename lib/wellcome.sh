@@ -1,3 +1,3 @@
 function wellcome() {
-  echo ".... Shell-Tools ...."
+  echo " .... Shell-Tools .... vers: GIT_VERSION "
 }
