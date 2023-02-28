@@ -14,4 +14,6 @@ grep -q "$source_bash_tool" $HOME/.bashrc && echo OK || {
   echo "export PATH=$install_dir:\$PATH" >> $HOME/.bashrc
   echo "$source_bash_tool" >> $HOME/.bashrc
   echo "Installed..."
+  bash -ic 'sh_wellcome'
+  bash -ic 'sh_functions'
 }
