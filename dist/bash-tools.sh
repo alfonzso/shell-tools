@@ -1,10 +1,10 @@
 #! /bin/bash
-# version: eae7fcb
+# version: 1afc4a8
 
 function b64_toggle() {
   input_str=$1
   b64_regex='^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)?$'
-  b64_decoded="$(echo $input_str | base64 -d)"
+  b64_decoded="$(echo $input_str | base64 -d 2> /dev/null)"
   if [[ $b64_decoded = *[![:ascii:]]* ]]; then
     echo "$input_str" | base64
   else
@@ -19,7 +19,7 @@ function list_remoteless_local_branches() {
 }
 
 function wellcome() {
-  echo " .... Shell-Tools .... vers: eae7fcb "
+  echo " .... Shell-Tools .... vers: 1afc4a8 "
 }
 
 alias ll='ls -alF'
