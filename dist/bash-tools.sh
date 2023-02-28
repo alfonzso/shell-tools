@@ -1,5 +1,5 @@
 #! /bin/bash
-# version: 1afc4a8
+# version: 6dd2992
 
 function b64_toggle() {
   input_str=$1
@@ -19,7 +19,7 @@ function list_remoteless_local_branches() {
 }
 
 function wellcome() {
-  echo " .... Shell-Tools .... vers: 1afc4a8 "
+  echo " .... Shell-Tools .... vers: 6dd2992 "
 }
 
 alias ll='ls -alF'
