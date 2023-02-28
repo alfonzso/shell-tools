@@ -16,7 +16,7 @@ cat << EOF >> $module
 sh_func="$sh_func"
 
 sh_functions() {
-  echo "Available functions: "
+  echo "Available functions (after bash login/source/etc): "
   for i in \$sh_func; do
     echo "  sh_\$i"
   done

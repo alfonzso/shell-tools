@@ -1,5 +1,5 @@
 #! /bin/bash
-# version: e09709f
+# version: c10c867
 
 function b64_toggle() {
   input_str=$1
@@ -20,7 +20,7 @@ function list_remoteless_local_branches() {
 }
 
 function wellcome() {
-  echo " .... Shell-Tools .... vers: e09709f "
+  echo " .... Shell-Tools .... vers: c10c867 "
 }
 
 alias ll='ls -alF'
@@ -30,7 +30,7 @@ alias l='ls -CF'
 sh_func="list_remoteless_local_branches wellcome b64_toggle"
 
 sh_functions() {
-  echo "Available functions: "
+  echo "Available functions (after bash login/source/etc): "
   for i in $sh_func; do
     echo "  sh_$i"
   done
