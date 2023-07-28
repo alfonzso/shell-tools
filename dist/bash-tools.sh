@@ -1,11 +1,13 @@
 #! /bin/bash
-# version: 829d324
+# version: a07918f
 
 function b64_toggle() {
   input_str=$1
   b64_regex='^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)?$'
   b64_decoded="$(echo $input_str | base64 -d 2> /dev/null)"
-  echo "---------------------------sh"
+  [[ -z "$TESTING" ]] && echo "---------------------------sh"
+  res=false; [[ "$b64_decoded" =~ "$b64_regex" ]] && res=true
+  [[ -z "$TESTING" ]] && echo $res
   if [[ "$b64_decoded" = *[![:ascii:]]* ]]; then
     echo "$input_str" | base64 -w0 && echo
   else
@@ -19,15 +21,23 @@ function list_remoteless_local_branches() {
   diff --unchanged-line-format= --old-line-format= --new-line-format='%L' <(echo "$remote_b") <(echo "$local_b")
 }
 
+function update_shell_tools() {
+  echo "To update, type this: curl -s https://raw.githubusercontent.com/alfonzso/shell-tools/main/dist/install.sh | bash "
+}
+
+function self_update() {
+  curl -s https://raw.githubusercontent.com/alfonzso/shell-tools/main/dist/install.sh | bash
+}
+
 function wellcome() {
-  echo " .... Shell-Tools .... vers: 829d324 "
+  echo " .... Shell-Tools .... vers: a07918f "
 }
 
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-sh_func="list_remoteless_local_branches wellcome b64_toggle"
+sh_func="list_remoteless_local_branches update_shell_tools self_update wellcome b64_toggle"
 
 sh_functions() {
   echo "Available functions (after bash login/source/etc): "
