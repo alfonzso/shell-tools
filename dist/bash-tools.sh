@@ -1,5 +1,5 @@
 #! /bin/bash
-# version: e0c4475 - 2023-08-18 00:59:49 
+# version: 3f3fc88 - 2023-08-18 01:12:09 
 
 function b64_toggle() {
   [[ -n $SH_TOOLS_DEBUG ]] && set -x
@@ -32,7 +32,7 @@ function self_update() {
 }
 
 function wellcome() {
-  echo " .... Shell-Tools .... vers: e0c4475 "
+  echo " .... Shell-Tools .... vers: 3f3fc88 "
 }
 
 alias ll='ls -alF'
