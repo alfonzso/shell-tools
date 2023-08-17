@@ -3,7 +3,7 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null && pwd)"
 ROOT=$DIR
 
 module="dist/bash-tools.sh"
-echo -e "#! /bin/bash\n# version: $(git rev-parse --short HEAD)\n" > $module
+echo -e "#! /bin/bash\n# version: $(git rev-parse --short HEAD) - $(git log -1 --pretty='format:%cd' --date=format:'%Y-%m-%d %H:%M:%S') \n" > $module
 ls lib/*.sh | xargs -n1 | grep -v test | xargs -I% bash -c "cat % >> $module && echo '' >> $module"
 cat shells/bash.sh >> $module
 
